@@ -38,4 +38,36 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 
 ## Development
 npx create-next-app@14.2.35 ./
-npx shadcn init
+
+npx shadcn init // When Shadcn initializes, it adds custom colors to your tailwind.config.ts. Shadcn projects typically use Lucide React for icons
+
+1. ThemeProvider(ref: https://ui.shadcn.com/docs/dark-mode/next):
+
+Shadcn is designed to work with a library called next-themes. This is the professional way to do it because it prevents "flashing" (where the screen is white for a split second before turning dark) and allows users to toggle it manually if they want.
+
+1-1.Install the package:
+
+```Bash
+npm install next-themes
+```
+
+1-2.Create a Provider: Create a file at components/theme-provider.tsx:
+
+1-3. Wrap your Layout: In app/layout.tsx, wrap your children with the provider and set defaultTheme="dark":
+
+1-4. ThemeToggle: 
+
+```bash
+npx shadcn add button
+npx shadcn add dropdown-menu
+```
+
+1-4.Note on "Hydration Mismatch"
+You might see a warning in the console about "Hydration failed." This happens because the server doesn't know what the user's theme preference is yet. To fix this, ensure your <html> tag in layout.tsx has the suppressHydrationWarning attribute:
+
+```bash
+<html lang="en" suppressHydrationWarning>
+```
+
+## VSCode Extension
+HSL Color Preview
