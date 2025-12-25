@@ -45,29 +45,34 @@ npx shadcn init // When Shadcn initializes, it adds custom colors to your tailwi
 
 Shadcn is designed to work with a library called next-themes. This is the professional way to do it because it prevents "flashing" (where the screen is white for a split second before turning dark) and allows users to toggle it manually if they want.
 
-1-1.Install the package:
+1-1. Install the package:
 
 ```Bash
 npm install next-themes
 ```
 
-1-2.Create a Provider: Create a file at components/theme-provider.tsx:
+1-2. Create a Provider: Create a file at components/theme-provider.tsx:
 
 1-3. Wrap your Layout: In app/layout.tsx, wrap your children with the provider and set defaultTheme="dark":
 
 1-4. ThemeToggle: 
 
 ```bash
-npx shadcn add button
-npx shadcn add dropdown-menu
+npx shadcn add button dropdown-menu
 ```
-
-1-4.Note on "Hydration Mismatch"
+1-5. Note on "Hydration Mismatch"
 You might see a warning in the console about "Hydration failed." This happens because the server doesn't know what the user's theme preference is yet. To fix this, ensure your <html> tag in layout.tsx has the suppressHydrationWarning attribute:
 
 ```bash
 <html lang="en" suppressHydrationWarning>
 ```
 
+2. SideBar (ref: https://ui.shadcn.com/blocks/sidebar, https://ui.shadcn.com/docs/components/sidebar)
+
+Add a SidebarProvider and SidebarTrigger at the root layout of application.
+
+```bash
+npx shadcn@latest add sidebar-07
+```
 ## VSCode Extension
 HSL Color Preview
