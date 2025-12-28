@@ -1,0 +1,38 @@
+{
+  "Language": {
+    "en": "English",
+    "zh-TW": "繁體中文",
+    "ja": "日本語",
+    "de": "Deutsch"
+  },
+  "Common": {
+    "actions": {
+      "save": "儲存",
+      "cancel": "取消",
+      "delete": "刪除"
+    }
+  },
+  "Sidebar": {
+    "navMain": {
+      "profile": "個人資料",
+      "monitoring": "監控管理",
+      "resource_utilization": "資源使用率",
+      "license_status": "授權狀態",
+      "usage": "用量統計",
+      "workstation": "工作站",
+      "job": "作業任務",
+      "utility": "工具程式",
+      "file_exchange": "檔案交換",
+      "license_booking": "授權預約"
+    },
+    "navAdmin": {
+      "cost_trend": "成本趨勢",
+      "pricing_calculator": "計價計算機"
+    }
+  },
+  "NotFound": {
+    "title": "404 - 找不到頁面",
+    "description": "您訪問的頁面不存在或已被移除。",
+    "backHome": "回到首頁"
+  }
+}

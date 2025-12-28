@@ -1,0 +1,38 @@
+{
+  "Language": {
+    "en": "English",
+    "zh-TW": "繁體中文",
+    "ja": "日本語",
+    "de": "Deutsch"
+  },
+  "Common": {
+    "actions": {
+      "save": "Speichern",
+      "cancel": "Abbrechen",
+      "delete": "Löschen"
+    }
+  },
+  "Sidebar": {
+    "navMain": {
+      "profile": "Profil",
+      "monitoring": "Überwachung",
+      "resource_utilization": "Ressourcenauslastung",
+      "license_status": "Lizenzstatus",
+      "usage": "Nutzung",
+      "workstation": "Workstation",
+      "job": "Auftrag",
+      "utility": "Dienstprogramme",
+      "file_exchange": "Dateiaustausch",
+      "license_booking": "Lizenzreservierung"
+    },
+    "navAdmin": {
+      "cost_trend": "Kostentrend",
+      "pricing_calculator": "Preiskalkulator"
+    }
+  },
+  "NotFound": {
+    "title": "404 - Seite nicht gefunden",
+    "description": "Die von Ihnen gesuchte Seite existiert nicht oder wurde verschoben.",
+    "backHome": "Zurück zur Startseite"
+  }
+}

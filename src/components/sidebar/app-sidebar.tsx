@@ -1,15 +1,6 @@
 "use client"
 
 import * as React from "react"
-import {
-  BookOpen,
-  Bot,
-  Frame,
-  GalleryVerticalEnd,
-  PieChart,
-  Settings2,
-  SquareTerminal,
-} from "lucide-react"
 
 import { NavMain } from "@/components/sidebar/nav-main"
 import { NavAdmin } from "@/components/sidebar/nav-admin"
@@ -24,85 +15,7 @@ import {
   SidebarMenuButton,
 } from "@/components/ui/sidebar"
 
-const data = {
-  user: {
-    name: "shadcn",
-    email: "m@example.com",
-    avatar: "https://github.com/shadcn.png",
-  },
-  teams: [
-    {
-      name: "HPC Portal",
-      logo: GalleryVerticalEnd,
-    },
-  ],
-  navMain: [
-    {
-      title: "Profile",
-      url: "/profile",
-      icon: SquareTerminal,
-      isActive: true,
-      items: [],
-    },
-    {
-      title: "Monitoring",
-      url: "#",
-      icon: Bot,
-      items: [
-        {
-          title: "Resource Utilization",
-          url: "/monitor/resource",
-        },
-        {
-          title: "License Status",
-          url: "monitor/license",
-        }
-      ],
-    },
-    {
-      title: "Usage",
-      url: "#",
-      icon: BookOpen,
-      items: [
-        {
-          title: "Workstation",
-          url: "/usage/workstation",
-        },
-        {
-          title: "Job",
-          url: "/usage/job",
-        },
-      ],
-    },
-    {
-      title: "Utility",
-      url: "#",
-      icon: Settings2,
-      items: [
-        {
-          title: "File Exchange",
-          url: "/utility/exchange",
-        },
-        {
-          title: "License Booking",
-          url: "utility/booking",
-        },
-      ],
-    },
-  ],
-  navAdmin: [
-    {
-      name: "Cost Trend",
-      url: "/admin/cost",
-      icon: PieChart,
-    },
-    {
-      name: "Pricing Calculator",
-      url: "/admin/price",
-      icon: Frame,
-    },
-  ],
-}
+import { NAVIGATION_CONFIG } from "@/config/navigation"
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
@@ -116,17 +29,17 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
           </div>
           <div className="grid flex-1 text-left text-sm leading-tight">
             <span className="truncate font-semibold">
-              {data.teams[0].name}
+              {NAVIGATION_CONFIG.teams[0].name}
             </span>
           </div>
         </SidebarMenuButton>
       </SidebarHeader>
       <SidebarContent>
-        <NavMain items={data.navMain} />
-        <NavAdmin items={data.navAdmin} />
+        <NavMain items={NAVIGATION_CONFIG.navMain} />
+        <NavAdmin items={NAVIGATION_CONFIG.navAdmin} />
       </SidebarContent>
       <SidebarFooter>
-        <NavUser user={data.user} />
+        <NavUser user={NAVIGATION_CONFIG.user} />
       </SidebarFooter>
       <SidebarRail />
     </Sidebar>

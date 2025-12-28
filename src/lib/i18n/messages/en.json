@@ -1,0 +1,38 @@
+{
+  "Language": {
+    "en": "English",
+    "zh-TW": "繁體中文",
+    "ja": "日本語",
+    "de": "Deutsch"
+  },
+  "Common": {
+    "actions": {
+      "save": "Save",
+      "cancel": "Cancel",
+      "delete": "Delete"
+    }
+  },
+  "Sidebar": {
+    "navMain": {
+      "profile": "Profile",
+      "monitoring": "Monitoring",
+      "resource_utilization": "Resource Utilization",
+      "license_status": "License Status",
+      "usage": "Usage",
+      "workstation": "Workstation",
+      "job": "Job",
+      "utility": "Utility",
+      "file_exchange": "File Exchange",
+      "license_booking": "License Booking"
+    },
+    "navAdmin": {
+      "cost_trend": "Cost Trend",
+      "pricing_calculator": "Pricing Calculator"
+    }
+  },
+  "NotFound": {
+    "title": "404 - Page Not Found",
+    "description": "The page you are looking for doesn't exist.",
+    "backHome": "Back to Home"
+  }
+}

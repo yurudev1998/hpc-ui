@@ -1,0 +1,38 @@
+{
+  "Language": {
+    "en": "English",
+    "zh-TW": "繁體中文",
+    "ja": "日本語",
+    "de": "Deutsch"
+  },
+  "Common": {
+    "actions": {
+      "save": "保存",
+      "cancel": "キャンセル",
+      "delete": "削除"
+    }
+  },
+  "Sidebar": {
+    "navMain": {
+      "profile": "プロフィール",
+      "monitoring": "モニタリング",
+      "resource_utilization": "リソース稼働率",
+      "license_status": "ライセンス状況",
+      "usage": "使用統計",
+      "workstation": "ワークステーション",
+      "job": "ジョブ・タスク",
+      "utility": "ユーティリティ",
+      "file_exchange": "ファイル交換",
+      "license_booking": "ライセンス予約"
+    },
+    "navAdmin": {
+      "cost_trend": "コスト推移",
+      "pricing_calculator": "料金シミュレーター"
+    }
+  },
+  "NotFound": {
+    "title": "404 - ページが見つかりません",
+    "description": "お探しのページは存在しないか、移動した可能性があります。",
+    "backHome": "ホームに戻る"
+  }
+}

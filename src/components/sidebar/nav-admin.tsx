@@ -9,9 +9,10 @@ import {
   SidebarGroupLabel,
   SidebarMenu,
   SidebarMenuButton,
-  SidebarMenuItem,
-  useSidebar,
+  SidebarMenuItem
 } from "@/components/ui/sidebar"
+import { useTranslations } from "next-intl"
+import { Link } from "@/lib/i18n/routing";
 
 export function NavAdmin({
   items,
@@ -22,7 +23,7 @@ export function NavAdmin({
     icon: LucideIcon
   }[]
 }) {
-  const { isMobile } = useSidebar()
+  const t = useTranslations('Sidebar.navAdmin');
 
   return (
     <SidebarGroup className="group-data-[collapsible=icon]:hidden">
@@ -31,10 +32,10 @@ export function NavAdmin({
         {items.map((item) => (
           <SidebarMenuItem key={item.name}>
             <SidebarMenuButton asChild>
-              <a href={item.url}>
+              <Link href={item.url}>
                 <item.icon />
-                <span>{item.name}</span>
-              </a>
+                <span>{t(item.name)}</span>
+              </Link>
             </SidebarMenuButton>
           </SidebarMenuItem>
         ))}

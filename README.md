@@ -74,5 +74,36 @@ Add a SidebarProvider and SidebarTrigger at the root layout of application.
 ```bash
 npx shadcn@latest add sidebar-07
 ```
+
+3. i18n (ref:https://nextjs.org/docs/14/app/building-your-application/routing/internationalization)
+
+- Folder Structure: Move your pages into a [locale] folder: src/app/[locale]/layout.tsx.
+
+- Middleware: Create a middleware.ts to detect the language and redirect the user.
+
+- Library: Use a library like next-intl.
+
+- i18n/messages/[locale].json
+    -  nested JSON structure:
+        - Group keys by Feature (Sidebar, Settings, Auth).
+        - Use Namespaces in useTranslations('Namespace') to keep component code short.
+        - Keep nesting to 3-4 levels deep maximum (too deep becomes hard to manage).
+    -  Advanced Trick: Parameters in Nested Keys
+        ```bash
+            {
+                "Welcome": {
+                    "greeting": "Hello, {name}!",
+                    "lastLogin": "Your last login was {date}"
+                }
+            },
+        ```
+        ```bash
+        const t = useTranslations('Welcome');
+
+        return (
+            <h1>{t('greeting', { name: 'Shadcn' })}</h1>
+        );
+        ```
+![alt text](image.png)
 ## VSCode Extension
 HSL Color Preview
