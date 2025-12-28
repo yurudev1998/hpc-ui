@@ -105,5 +105,10 @@ npx shadcn@latest add sidebar-07
         );
         ```
 ![alt text](image.png)
+
+4. Folder structure (ref: Youtube This Folder Structure Makes Me 100% More Productive- https://www.youtube.com/watch?v=xyxrB2Aa7KE)
+- add rules in eslintrc.json to make sure one way dataflow for better code maintainability
+![alt text](image-1.png)
+
 ## VSCode Extension
 HSL Color Preview

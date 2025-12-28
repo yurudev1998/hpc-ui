@@ -13,7 +13,7 @@ import {
 } from "@/components/ui/dropdown-menu"
 import { Button } from "@/components/ui/button"
 
-import { LANGUAGES } from "@/config/languages"
+import { LANGUAGES } from "@/lib/constants/languages"
 
 
 

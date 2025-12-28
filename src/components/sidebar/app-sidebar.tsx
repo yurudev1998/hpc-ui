@@ -15,7 +15,7 @@ import {
   SidebarMenuButton,
 } from "@/components/ui/sidebar"
 
-import { NAVIGATION_CONFIG } from "@/config/navigation"
+import { NAVIGATION_CONFIG } from "@/lib/constants/navigation"
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
