@@ -17,8 +17,7 @@ import {
   SidebarProvider,
   SidebarTrigger,
 } from "@/components/ui/sidebar"
-import { routing } from '@/lib/i18n/routing';
-import { notFound } from 'next/navigation';
+import { routing, validateLocale } from '@/lib/i18n/routing';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, setRequestLocale } from 'next-intl/server';
 import { LanguageToggle } from "@/components/language-toggle";
@@ -34,17 +33,16 @@ export function generateStaticParams() {
 
 export default async function LocaleLayout({
   children,
-  params: { locale }
+  params
 }: {
   children: React.ReactNode;
-  params: {locale: string};
+  params: Promise<{ locale: string }>;
 }) {
-  if (!routing.locales.includes(locale as any)) {
-    notFound();
-  }
+  const { locale } = await params;
+
+  validateLocale(locale);
 
   setRequestLocale(locale);
-
   const messages = await getMessages();
 
   return (
