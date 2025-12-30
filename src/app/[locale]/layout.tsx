@@ -1,26 +1,12 @@
 import type { Metadata } from "next";
-import "../globals.css";
+import "../../app/globals.css";
 import { ThemeProvider } from "next-themes";
-import { ThemeToggle } from "@/components/theme-toggle";
-import { AppSidebar } from "@/components/sidebar/app-sidebar"
-import {
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  BreadcrumbList,
-  BreadcrumbPage,
-  BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb"
-import { Separator } from "@/components/ui/separator"
-import {
-  SidebarInset,
-  SidebarProvider,
-  SidebarTrigger,
-} from "@/components/ui/sidebar"
 import { routing, validateLocale } from '@/lib/i18n/routing';
-import { NextIntlClientProvider } from 'next-intl';
-import { getMessages, setRequestLocale } from 'next-intl/server';
-import { LanguageToggle } from "@/components/language-toggle";
+import { NextIntlClientProvider } from "next-intl";
+import { getMessages, setRequestLocale } from "next-intl/server";
+// import { getServerSession } from "next-auth";
+// import { authOptions } from "@/api/auth/[...nextauth]/route"; // Adjust path as needed
+// import { AuthProvider } from "@/features/authentication/components/auth-provider";
 
 export const metadata: Metadata = {
   title: "HPC Portal",
@@ -31,7 +17,7 @@ export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
 
-export default async function LocaleLayout({
+export default async function BaseLocaleLayout({
   children,
   params
 }: {
@@ -39,56 +25,27 @@ export default async function LocaleLayout({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
+  // const session = await getServerSession(authOptions);
 
   validateLocale(locale);
-
   setRequestLocale(locale);
   const messages = await getMessages();
 
   return (
     <html lang={locale} suppressHydrationWarning>
-      <body className="bg-background text-foreground antialiased">
+      <body className="bg-background text-foreground antialiased selection:bg-primary/10">
         <NextIntlClientProvider messages={messages} locale={locale}>
-          <ThemeProvider
+          {/* <AuthProvider session={session}> */}
+            <ThemeProvider
               attribute="class"
               defaultTheme="dark"
               enableSystem
               disableTransitionOnChange
-          >
-            <SidebarProvider>
-              <AppSidebar />
-              <SidebarInset>
-                <header className="flex h-16 shrink-0 items-center gap-2 transition-[width,height] ease-linear group-has-[[data-collapsible=icon]]/sidebar-wrapper:h-12">
-                  <div className="flex w-full items-center justify-between">
-                    <div className="flex items-center gap-2 px-4">
-                      <SidebarTrigger className="-ml-1" />
-                      <Separator orientation="vertical" className="mr-2 h-4" />
-                      <Breadcrumb>
-                        <BreadcrumbList>
-                          <BreadcrumbItem className="hidden md:block">
-                            <BreadcrumbLink href="#">
-                              Home
-                            </BreadcrumbLink>
-                          </BreadcrumbItem>
-                          <BreadcrumbSeparator className="hidden md:block" />
-                          <BreadcrumbItem>
-                            <BreadcrumbPage>Data Fetching</BreadcrumbPage>
-                          </BreadcrumbItem>
-                        </BreadcrumbList>
-                      </Breadcrumb>
-                    </div>
-                    <div className="flex item-center px-4 gap-2">
-                      <ThemeToggle />
-                      <LanguageToggle />
-                    </div>
-                  </div>
-                </header>
-                {children}
-              </SidebarInset>
-            </SidebarProvider>
-            
-            
-          </ThemeProvider>
+            >
+              {/* This renders either the Login page or the Dashboard Layout */}
+              {children}
+            </ThemeProvider>
+          {/* </AuthProvider> */}
         </NextIntlClientProvider>
       </body>
     </html>

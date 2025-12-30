@@ -1,8 +1,8 @@
-import { routing } from '@/lib/i18n/routing';
 import { redirect } from 'next/navigation';
+import { routing } from '@/lib/i18n/routing';
 
-// To handle URLs that are completely broken, 
-// like yourdomain.com/random-folder/xyz or yourdomain.com/fr/dashboard (if French isn't supported)
-export default function RootNotFound() {
-  redirect(`/${routing.defaultLocale}`); // to redirect the lost user back into a valid language
+export default function GlobalNotFound() {
+  // If the path doesn't match a valid locale, send them to the default locale
+  // This effectively "re-enters" your localized [locale] layout logic.
+  redirect(`/${routing.defaultLocale}/profile`);
 }
