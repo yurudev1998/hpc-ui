@@ -12,7 +12,7 @@
       "delete": "刪除"
     }
   },
-  "Sidebar": {
+  "sidebar": {
     "navMain": {
       "profile": "個人資料",
       "monitoring": "監控管理",

@@ -12,7 +12,7 @@
       "delete": "削除"
     }
   },
-  "Sidebar": {
+  "sidebar": {
     "navMain": {
       "profile": "プロフィール",
       "monitoring": "モニタリング",

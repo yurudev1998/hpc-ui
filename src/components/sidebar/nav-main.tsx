@@ -1,5 +1,6 @@
 "use client"
-
+import { useTranslations } from 'next-intl';
+import { Link } from "@/lib/i18n/routing";
 import { ChevronRight, type LucideIcon } from "lucide-react"
 
 import {
@@ -11,14 +12,13 @@ import {
   SidebarGroup,
   SidebarGroupLabel,
   SidebarMenu,
+  SidebarMenuAction,
   SidebarMenuButton,
   SidebarMenuItem,
   SidebarMenuSub,
   SidebarMenuSubButton,
   SidebarMenuSubItem,
 } from "@/components/ui/sidebar"
-import { useTranslations } from 'next-intl';
-import { Link } from "@/lib/i18n/routing";
 
 export function NavMain({
   items,
@@ -26,7 +26,7 @@ export function NavMain({
   items: {
     title: string
     url: string
-    icon?: LucideIcon
+    icon: LucideIcon
     isActive?: boolean
     items?: {
       title: string
@@ -34,11 +34,11 @@ export function NavMain({
     }[]
   }[]
 }) {
-  const t = useTranslations('Sidebar.navMain');
+  const t = useTranslations("sidebar.navMain");
 
   return (
     <SidebarGroup>
-      <SidebarGroupLabel>Main</SidebarGroupLabel>
+      {/* <SidebarGroupLabel>Main</SidebarGroupLabel> */}
       <SidebarMenu>
         {items.map((item) => {
           const hasSubItems = item.items && item.items.length > 0;
@@ -48,7 +48,7 @@ export function NavMain({
               <Collapsible
                 key={item.title}
                 asChild
-                defaultOpen={true}
+                defaultOpen={item.isActive}
                 className="group/collapsible"
               >
                 <SidebarMenuItem>

@@ -72,7 +72,7 @@ You might see a warning in the console about "Hydration failed." This happens be
 Add a SidebarProvider and SidebarTrigger at the root layout of application.
 
 ```bash
-npx shadcn@latest add sidebar-07
+npx shadcn@latest add sidebar-07, sidebar-16
 ```
 
 3. i18n (ref:https://nextjs.org/docs/14/app/building-your-application/routing/internationalization)

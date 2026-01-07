@@ -32,6 +32,7 @@ export const NAVIGATION_CONFIG = {
       title: "monitoring",
       url: "#",
       icon: Bot,
+      isActive: true,
       items: [
         {
           title: "resource_utilization",
@@ -47,6 +48,7 @@ export const NAVIGATION_CONFIG = {
       title: "usage",
       url: "#",
       icon: BookOpen,
+      isActive: true,
       items: [
         {
           title: "workstation",
@@ -62,6 +64,7 @@ export const NAVIGATION_CONFIG = {
       title: "utility",
       url: "#",
       icon: Settings2,
+      isActive: true,
       items: [
         {
           title: "file_exchange",
@@ -76,14 +79,20 @@ export const NAVIGATION_CONFIG = {
   ],
   navAdmin: [
     {
-      name: "cost_trend",
+      title: "cost_trend",
       url: "/admin/cost",
       icon: PieChart,
+      isActive: true,
+      items: [
+      ],
     },
     {
-      name: "pricing_calculator",
+      title: "pricing_calculator",
       url: "/admin/price",
       icon: Frame,
+      isActive: true,
+      items: [
+      ],
     },
   ],
 }

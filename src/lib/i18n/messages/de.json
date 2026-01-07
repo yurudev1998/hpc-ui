@@ -12,7 +12,7 @@
       "delete": "Löschen"
     }
   },
-  "Sidebar": {
+  "sidebar": {
     "navMain": {
       "profile": "Profil",
       "monitoring": "Überwachung",
