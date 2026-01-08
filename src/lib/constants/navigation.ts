@@ -2,7 +2,6 @@ import {
   BookOpen,
   Bot,
   Frame,
-  GalleryVerticalEnd,
   PieChart,
   Settings2,
   SquareTerminal,
@@ -14,11 +13,15 @@ export const NAVIGATION_CONFIG = {
     email: "m@example.com",
     avatar: "https://github.com/shadcn.png",
   },
-  teams: [
+  associations: [
     {
-      name: "HPC Portal",
-      logo: GalleryVerticalEnd,
+      tenant: "psis",
+      role: "admin",
     },
+    {
+      tenant: "atmd",
+      role: "user",
+    }
   ],
   navMain: [
     {
